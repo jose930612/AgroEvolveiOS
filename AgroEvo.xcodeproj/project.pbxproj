@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		48141654207C5571009BF683 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48141653207C5571009BF683 /* AppDelegate.swift */; };
-		48141656207C5571009BF683 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48141655207C5571009BF683 /* ViewController.swift */; };
 		48141659207C5571009BF683 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48141657207C5571009BF683 /* Main.storyboard */; };
 		4814165B207C5575009BF683 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4814165A207C5575009BF683 /* Assets.xcassets */; };
 		4814165E207C5575009BF683 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4814165C207C5575009BF683 /* LaunchScreen.storyboard */; };
+		488569272093EB100048855B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488569262093EB100048855B /* MainViewController.swift */; };
+		488569292093EB7F0048855B /* AnalizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488569282093EB7F0048855B /* AnalizeViewController.swift */; };
+		48B368CE2096376000A7B526 /* SendButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B368CD2096376000A7B526 /* SendButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		48141650207C5571009BF683 /* AgroEvo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AgroEvo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48141653207C5571009BF683 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		48141655207C5571009BF683 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		48141658207C5571009BF683 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4814165A207C5575009BF683 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4814165D207C5575009BF683 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4814165F207C5575009BF683 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		488569262093EB100048855B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		488569282093EB7F0048855B /* AnalizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalizeViewController.swift; sourceTree = "<group>"; };
+		48B368CD2096376000A7B526 /* SendButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +59,10 @@
 			isa = PBXGroup;
 			children = (
 				48141653207C5571009BF683 /* AppDelegate.swift */,
-				48141655207C5571009BF683 /* ViewController.swift */,
 				48141657207C5571009BF683 /* Main.storyboard */,
+				48B368CD2096376000A7B526 /* SendButton.swift */,
+				488569282093EB7F0048855B /* AnalizeViewController.swift */,
+				488569262093EB100048855B /* MainViewController.swift */,
 				4814165A207C5575009BF683 /* Assets.xcassets */,
 				4814165C207C5575009BF683 /* LaunchScreen.storyboard */,
 				4814165F207C5575009BF683 /* Info.plist */,
@@ -135,7 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48141656207C5571009BF683 /* ViewController.swift in Sources */,
+				488569272093EB100048855B /* MainViewController.swift in Sources */,
+				48B368CE2096376000A7B526 /* SendButton.swift in Sources */,
+				488569292093EB7F0048855B /* AnalizeViewController.swift in Sources */,
 				48141654207C5571009BF683 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
