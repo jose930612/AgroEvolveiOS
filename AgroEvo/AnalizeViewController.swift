@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class AnalizeViewController: UIViewController {
     
@@ -40,6 +41,41 @@ class AnalizeViewController: UIViewController {
     
     @IBAction func sendImage(_ sender: Any) {
         print("Image Send")
+        
+        let imageData = UIImageJPEGRepresentation(newImage!, 0.8) as NSData?
+        
+        var error: NSError? = nil
+        
+        let request = NSMutableURLRequest(url: URL(string: "http://159.65.225.153:5000/api/guess-what/")!)
+        request.httpMethod = "POST"
+        request.cachePolicy = .reloadIgnoringLocalCacheData
+        let boundary = "unique-consistent-string"
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        
+        let body = NSMutableData()
+        
+        body.append("Content-Type: image/jpeg\r\n\r\n".data(using: String.Encoding.utf8)!)
+        body.append(imageData as! Data)
+        body.append("\r\n".data(using: String.Encoding.utf8)!)
+        
+        body.append("--\(boundary)--\r\n".data(using: String.Encoding.utf8)!)
+        request.httpBody = body as Data
+        let session = URLSession.shared
+        let task = session.dataTask(with: request as URLRequest) {
+            (data, response, error) in
+            guard let _:NSData = data as NSData?, let _:URLResponse = response, error == nil else {
+                print("error")
+                self.view.isUserInteractionEnabled = true
+                return
+            }
+            if let httpResponse = response as? HTTPURLResponse {
+                print(httpResponse.statusCode)
+                if(httpResponse.statusCode == 200){
+                    print("A-OK")
+                }
+            }
+        }
+        
     }
     
     @IBAction func clearImageView(_ sender: Any) {
