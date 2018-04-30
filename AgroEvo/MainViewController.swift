@@ -8,18 +8,21 @@
 
 import UIKit
 import MobileCoreServices
+import Photos
 
 class MainViewController: UITabBarController,
     UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
+    
     let cameraButton = UIButton.init(type: .custom)
     var passImage:UIImage?
     var postMedia = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        checkPermission()
+        
         cameraButton.setTitle("Cam", for: .normal)
         cameraButton.frame = CGRect(x: self.tabBar.center.x - 32, y: self.view.bounds.height - 100, width: 74, height: 74)
         cameraButton.backgroundColor = .orange
@@ -28,6 +31,30 @@ UINavigationControllerDelegate {
         cameraButton.layer.cornerRadius = 36
         cameraButton.addTarget(self, action: #selector(self.chooseSourceOption), for: .touchUpInside)
         self.view.insertSubview(cameraButton, aboveSubview: self.tabBar)
+    }
+    
+    func checkPermission() {
+        let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
+        switch photoAuthorizationStatus {
+        case .authorized:
+            print("Access is granted by user")
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization({
+                (newStatus) in
+                print("status is \(newStatus)")
+                if newStatus ==  PHAuthorizationStatus.authorized {
+                    /* do stuff here */
+                    print("success")
+                }
+            })
+            print("It is not determined until now")
+        case .restricted:
+            // same same
+            print("User do not have access to photo album.")
+        case .denied:
+            // same same
+            print("User has denied the permission.")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -87,12 +114,16 @@ UINavigationControllerDelegate {
     }
     
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let analizeView = self.viewControllers![0] as! AnalizeViewController
+        
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.passImage = image
             self.postMedia = true
             print("Image selected")
-            let analizeView = self.viewControllers![0] as! AnalizeViewController
+            
             analizeView.newImage = image
+            analizeView.imageData = UIImageJPEGRepresentation(image, 0.8) //as NSData!
+            
             self.selectedIndex = 0
         }
         /*

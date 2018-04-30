@@ -8,10 +8,13 @@
 
 import UIKit
 import Foundation
+import Alamofire
 
 class AnalizeViewController: UIViewController {
     
     var newImage:UIImage?
+    var imageName = "tmp-img.jpg"
+    var imageData:Data?
     @IBOutlet weak var previewImg: UIImageView!
     @IBOutlet weak var analizeButton: SendButton!
     @IBOutlet weak var clearImage: SendButton!
@@ -39,43 +42,52 @@ class AnalizeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
     @IBAction func sendImage(_ sender: Any) {
         print("Image Send")
         
-        let imageData = UIImageJPEGRepresentation(newImage!, 0.8) as NSData?
+        let REST_UPLOAD_API_URL = "http://159.65.225.153:5000/api/guess-what/"
         
-        var error: NSError? = nil
+        let headers = [
+            "Content-Type": "multipart/form-data"
+        ]
         
-        let request = NSMutableURLRequest(url: URL(string: "http://159.65.225.153:5000/api/guess-what/")!)
-        request.httpMethod = "POST"
-        request.cachePolicy = .reloadIgnoringLocalCacheData
-        let boundary = "unique-consistent-string"
-        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        let parameters: Parameters = ["name": "test_place",
+                                      "description": "testing image upload from swift"]
         
-        let body = NSMutableData()
-        
-        body.append("Content-Type: image/jpeg\r\n\r\n".data(using: String.Encoding.utf8)!)
-        body.append(imageData as! Data)
-        body.append("\r\n".data(using: String.Encoding.utf8)!)
-        
-        body.append("--\(boundary)--\r\n".data(using: String.Encoding.utf8)!)
-        request.httpBody = body as Data
-        let session = URLSession.shared
-        let task = session.dataTask(with: request as URLRequest) {
-            (data, response, error) in
-            guard let _:NSData = data as NSData?, let _:URLResponse = response, error == nil else {
-                print("error")
-                self.view.isUserInteractionEnabled = true
-                return
-            }
-            if let httpResponse = response as? HTTPURLResponse {
-                print(httpResponse.statusCode)
-                if(httpResponse.statusCode == 200){
-                    print("A-OK")
+        Alamofire.upload(
+            multipartFormData: { multipartFormData in
+                
+                let imageData = self.imageData
+                multipartFormData.append(imageData!, withName: "image", fileName: "photo.jpg", mimeType: "jpg/png")
+                    
+                for (key, value) in parameters {
+                    if value is String || value is Int {
+                        multipartFormData.append("\(value)".data(using: .utf8)!, withName: key)
+                    }
                 }
-            }
-        }
-        
+        },
+            to: REST_UPLOAD_API_URL,
+            headers: headers,
+            encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    upload.responseJSON { response in
+                        //debugPrint(response)
+                        print(response.result.value!)
+                        let json_results = response.result.value as! NSDictionary
+                        let string_img_url = "http://159.65.225.153:5000/\(json_results["img_url"]!)"
+                        print(string_img_url)
+                        let url = URL(string: string_img_url)
+                        
+                        let data = try? Data(contentsOf: url!)
+                        self.previewImg.image = UIImage(data: data!)
+                        
+                    }
+                case .failure(let encodingError):
+                    print("encoding Error : \(encodingError)")
+                }
+        })
     }
     
     @IBAction func clearImageView(_ sender: Any) {
