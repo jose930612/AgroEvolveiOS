@@ -11,6 +11,11 @@
 		48141659207C5571009BF683 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48141657207C5571009BF683 /* Main.storyboard */; };
 		4814165B207C5575009BF683 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4814165A207C5575009BF683 /* Assets.xcassets */; };
 		4814165E207C5575009BF683 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4814165C207C5575009BF683 /* LaunchScreen.storyboard */; };
+		4870D4392097693500584303 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4870D4382097693500584303 /* GalleryViewController.swift */; };
+		4870D43B20976BB900584303 /* ProcessImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4870D43A20976BB900584303 /* ProcessImage.swift */; };
+		4870D43D2097E88500584303 /* SelectGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4870D43C2097E88500584303 /* SelectGalleryViewController.swift */; };
+		4870D4452098BD6600584303 /* MediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4870D4442098BD6600584303 /* MediaCollectionViewCell.swift */; };
+		4870D4472098CAA700584303 /* MediaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4870D4462098CAA700584303 /* MediaDetailViewController.swift */; };
 		488569272093EB100048855B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488569262093EB100048855B /* MainViewController.swift */; };
 		488569292093EB7F0048855B /* AnalizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488569282093EB7F0048855B /* AnalizeViewController.swift */; };
 		48B368CE2096376000A7B526 /* SendButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B368CD2096376000A7B526 /* SendButton.swift */; };
@@ -24,6 +29,11 @@
 		4814165A207C5575009BF683 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4814165D207C5575009BF683 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4814165F207C5575009BF683 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4870D4382097693500584303 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		4870D43A20976BB900584303 /* ProcessImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessImage.swift; sourceTree = "<group>"; };
+		4870D43C2097E88500584303 /* SelectGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGalleryViewController.swift; sourceTree = "<group>"; };
+		4870D4442098BD6600584303 /* MediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCollectionViewCell.swift; sourceTree = "<group>"; };
+		4870D4462098CAA700584303 /* MediaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailViewController.swift; sourceTree = "<group>"; };
 		488569262093EB100048855B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		488569282093EB7F0048855B /* AnalizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalizeViewController.swift; sourceTree = "<group>"; };
 		48B368CD2096376000A7B526 /* SendButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendButton.swift; sourceTree = "<group>"; };
@@ -67,7 +77,12 @@
 			children = (
 				48141653207C5571009BF683 /* AppDelegate.swift */,
 				48141657207C5571009BF683 /* Main.storyboard */,
+				4870D4382097693500584303 /* GalleryViewController.swift */,
+				4870D43C2097E88500584303 /* SelectGalleryViewController.swift */,
+				4870D4442098BD6600584303 /* MediaCollectionViewCell.swift */,
+				4870D43A20976BB900584303 /* ProcessImage.swift */,
 				48B368CD2096376000A7B526 /* SendButton.swift */,
+				4870D4462098CAA700584303 /* MediaDetailViewController.swift */,
 				488569282093EB7F0048855B /* AnalizeViewController.swift */,
 				488569262093EB100048855B /* MainViewController.swift */,
 				4814165A207C5575009BF683 /* Assets.xcassets */,
@@ -208,8 +223,13 @@
 			files = (
 				488569272093EB100048855B /* MainViewController.swift in Sources */,
 				48B368CE2096376000A7B526 /* SendButton.swift in Sources */,
+				4870D4472098CAA700584303 /* MediaDetailViewController.swift in Sources */,
+				4870D4392097693500584303 /* GalleryViewController.swift in Sources */,
+				4870D43D2097E88500584303 /* SelectGalleryViewController.swift in Sources */,
+				4870D43B20976BB900584303 /* ProcessImage.swift in Sources */,
 				488569292093EB7F0048855B /* AnalizeViewController.swift in Sources */,
 				48141654207C5571009BF683 /* AppDelegate.swift in Sources */,
+				4870D4452098BD6600584303 /* MediaCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,7 +377,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q73A22FCTQ;
 				INFOPLIST_FILE = AgroEvo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ITink.AgroEvo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -373,7 +396,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q73A22FCTQ;
 				INFOPLIST_FILE = AgroEvo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ITink.AgroEvo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

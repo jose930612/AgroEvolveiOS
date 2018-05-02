@@ -10,23 +10,125 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Galeria-->
         <scene sceneID="k5D-Tm-aDn">
             <objects>
-                <viewController id="sfJ-iX-S1r" sceneMemberID="viewController">
+                <viewController id="sfJ-iX-S1r" customClass="SelectGalleryViewController" customModule="AgroEvo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bxa-o9-uld">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S82-Fm-bu8" customClass="SendButton" customModule="AgroEvo" customModuleProvider="target">
+                                <rect key="frame" x="101" y="308" width="173" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="s" value="Imagenes"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="EaV-HE-LRz" kind="showDetail" identifier="image_g_segue" id="BT9-kZ-dOc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUF-tc-84b" customClass="SendButton" customModule="AgroEvo" customModuleProvider="target">
+                                <rect key="frame" x="101" y="441" width="173" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="s" value="Videos"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="EaV-HE-LRz" kind="show" identifier="video_g_segue" id="rXa-qu-9AR"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8ob-pj-WOg"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="kLn-nB-wb5"/>
+                    <tabBarItem key="tabBarItem" title="Galeria" id="kLn-nB-wb5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1q0-Dp-0c1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="534" y="-1308"/>
+            <point key="canvasLocation" x="533.60000000000002" y="-1308.6206896551726"/>
         </scene>
-        <!--Item 1-->
+        <!--Gallery View Controller-->
+        <scene sceneID="OJg-fB-5Af">
+            <objects>
+                <viewController id="EaV-HE-LRz" customClass="GalleryViewController" customModule="AgroEvo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Iat-Yn-sdO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bx6-PX-4Kn">
+                                <rect key="frame" x="16" y="88" width="343" height="637"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="evE-rE-ng3">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="media" id="Fd2-LW-REU" customClass="MediaCollectionViewCell" customModule="AgroEvo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zVJ-xi-bme">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="media_thumbnail" destination="zVJ-xi-bme" id="t8h-gq-HKE"/>
+                                            <segue destination="agW-Ot-p3J" kind="show" identifier="mediaDetails" id="a2T-qG-jPX"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="EaV-HE-LRz" id="sk5-Pf-Pvy"/>
+                                    <outlet property="delegate" destination="EaV-HE-LRz" id="FWn-yj-q7a"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="V0y-Jj-34H"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VhN-Yz-V9G"/>
+                    <connections>
+                        <outlet property="mediaCollection" destination="bx6-PX-4Kn" id="PW0-gf-QlD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IAo-Yc-fit" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1736.8" y="-1309.3596059113302"/>
+        </scene>
+        <!--Media Detail View Controller-->
+        <scene sceneID="qU6-4l-zZD">
+            <objects>
+                <viewController id="agW-Ot-p3J" customClass="MediaDetailViewController" customModule="AgroEvo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0k4-89-gDX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hlv-AI-qXn">
+                                <rect key="frame" x="0.0" y="44" width="375" height="525"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="QP5-Kr-Y3i"/>
+                    </view>
+                    <connections>
+                        <outlet property="fullzise_img" destination="hlv-AI-qXn" id="JR0-1v-t2x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9bT-sf-M0B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2709.5999999999999" y="-1309.3596059113302"/>
+        </scene>
+        <!--Analizador-->
         <scene sceneID="cqw-g7-Lwd">
             <objects>
                 <viewController id="ecf-Pb-yA1" customClass="AnalizeViewController" customModule="AgroEvo" customModuleProvider="target" sceneMemberID="viewController">
@@ -62,7 +164,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="xws-rD-Wo6"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="7pX-P2-KX6"/>
+                    <tabBarItem key="tabBarItem" title="Analizador" id="7pX-P2-KX6"/>
                     <connections>
                         <outlet property="analizeButton" destination="JB2-2D-vEa" id="KaA-KR-71S"/>
                         <outlet property="clearImage" destination="UDp-u7-VAj" id="OiJ-Qn-akA"/>
@@ -89,7 +191,10 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qNJ-3J-e8u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-228" y="-1663"/>
+            <point key="canvasLocation" x="-1266" y="-1653"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="BT9-kZ-dOc"/>
+    </inferredMetricsTieBreakers>
 </document>

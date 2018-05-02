@@ -46,6 +46,8 @@ class AnalizeViewController: UIViewController {
     @IBAction func sendImage(_ sender: Any) {
         print("Image Send")
         
+        let random_img_name = randomString(length: 10)
+        
         let REST_UPLOAD_API_URL = "http://159.65.225.153:5000/api/guess-what/"
         
         let headers = [
@@ -59,7 +61,7 @@ class AnalizeViewController: UIViewController {
             multipartFormData: { multipartFormData in
                 
                 let imageData = self.imageData
-                multipartFormData.append(imageData!, withName: "image", fileName: "photo.jpg", mimeType: "jpg/png")
+                multipartFormData.append(imageData!, withName: "image", fileName: "\(random_img_name).jpg", mimeType: "jpg/png")
                     
                 for (key, value) in parameters {
                     if value is String || value is Int {
@@ -73,15 +75,17 @@ class AnalizeViewController: UIViewController {
                 switch encodingResult {
                 case .success(let upload, _, _):
                     upload.responseJSON { response in
-                        //debugPrint(response)
-                        print(response.result.value!)
-                        let json_results = response.result.value as! NSDictionary
-                        let string_img_url = "http://159.65.225.153:5000/\(json_results["img_url"]!)"
-                        print(string_img_url)
-                        let url = URL(string: string_img_url)
-                        
-                        let data = try? Data(contentsOf: url!)
-                        self.previewImg.image = UIImage(data: data!)
+                        debugPrint(response)
+                        //print(response.result.value!)
+                        if (response.result.value != nil) {
+                            let json_results = response.result.value as! NSDictionary
+                            let string_img_url = "http://159.65.225.153:5000/media/\(json_results["img_url"]!)"
+                            print(string_img_url)
+                            let url = URL(string: string_img_url)
+                            
+                            let data = try? Data(contentsOf: url!)
+                            self.previewImg.image = UIImage(data: data!)
+                        }
                         
                     }
                 case .failure(let encodingError):
@@ -96,6 +100,22 @@ class AnalizeViewController: UIViewController {
         clearImage.isEnabled = false
         self.previewImg.image = nil
         newImage = nil
+    }
+    
+    func randomString(length: Int) -> String {
+        
+        let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        let len = UInt32(letters.length)
+        
+        var randomString = ""
+        
+        for _ in 0 ..< length {
+            let rand = arc4random_uniform(len)
+            var nextChar = letters.character(at: Int(rand))
+            randomString += NSString(characters: &nextChar, length: 1) as String
+        }
+        
+        return randomString
     }
     
     /*
