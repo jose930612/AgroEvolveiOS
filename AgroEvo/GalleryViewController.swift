@@ -26,7 +26,11 @@ class GalleryViewController: UIViewController, UICollectionViewDelegate, UIColle
         if (self.processImages.count == 0){
             switch self.galleryType {
             case "images":
-                requestImmgs()
+                self.navigationItem.title = "Imagenes"
+                requestImgs()
+                break
+            case "videos":
+                self.navigationItem.title = "Videos"
                 break
             default:
                 break
@@ -45,7 +49,7 @@ class GalleryViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellView = collectionView.dequeueReusableCell(withReuseIdentifier: "media", for: indexPath) as! MediaCollectionViewCell
-        let preview_img = resizeImage(image: self.processImages[indexPath.row].image_url!, newWidth: cellView.bounds.maxX)
+        let preview_img = resizeImage(image: self.processImages[indexPath.row].thumbnail_img!, newWidth: cellView.bounds.maxX)
         
         cellView.media_thumbnail.image = preview_img
         
@@ -67,7 +71,7 @@ class GalleryViewController: UIViewController, UICollectionViewDelegate, UIColle
         return newImage!
     }
     
-    func requestImmgs() {
+    func requestImgs() {
         
         let url_string = "http://159.65.225.153:5000/api/image-gallery/"
         
@@ -86,10 +90,14 @@ class GalleryViewController: UIViewController, UICollectionViewDelegate, UIColle
                         
                         let id = temp["id"]! as! String
                         
-                        let url_string = "http://159.65.225.153:5000/media/\(temp["img_path"]!)"
+                        let thumbnail_url_string = "http://159.65.225.153:5000/media/\(temp["thumbnail_path"]!)"
                         
-                        let img_url = URL(string: url_string)
-                        let data = try? Data(contentsOf: img_url!)
+                        let img_url_string = "http://159.65.225.153:5000/media/\(temp["img_path"]!)"
+                        
+                        let thumbnail_url = URL(string: thumbnail_url_string)
+                        let img_url = URL(string: img_url_string)!
+                        
+                        let data = try? Data(contentsOf: thumbnail_url!)
                         
                         let hoja_sana = temp["hoja_sana"]! as! Double
                         let hoja_roya_blanca = temp["hoja_roya_blanca"]! as! Double
@@ -100,7 +108,7 @@ class GalleryViewController: UIViewController, UICollectionViewDelegate, UIColle
                         let flor_abierta = temp["flor_abierto"]! as! Double
                         let maleza = temp["maleza"]! as! Double
                         
-                        let image_response = ProcessImage(id: id, image_url: UIImage(data: data!)!, hoja_sana: Float(hoja_sana), hoja_roya_blanca: Float(hoja_roya_blanca), hoja_minador: Float(hoja_minador), hoja_quimico: Float(hoja_quimico), hoja_quemada: Float(hoja_quemada), flor_cerrada: Float(flor_cerrada), flor_abierta: Float(flor_abierta), maleza: Float(maleza))
+                        let image_response = ProcessImage(id: id, thumbnail_img: UIImage(data: data!)!,img_url:img_url, hoja_sana: Float(hoja_sana), hoja_roya_blanca: Float(hoja_roya_blanca), hoja_minador: Float(hoja_minador), hoja_quimico: Float(hoja_quimico), hoja_quemada: Float(hoja_quemada), flor_cerrada: Float(flor_cerrada), flor_abierta: Float(flor_abierta), maleza: Float(maleza))
                         self.processImages.append(image_response)
                         print(temp["title"]!)
                     }

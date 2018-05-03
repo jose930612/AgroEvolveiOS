@@ -85,6 +85,7 @@ class AnalizeViewController: UIViewController {
                             
                             let data = try? Data(contentsOf: url!)
                             self.previewImg.image = UIImage(data: data!)
+                            self.analizeButton.isEnabled = false
                         }
                         
                     }

@@ -122,7 +122,7 @@ UINavigationControllerDelegate {
             print("Image selected")
             
             analizeView.newImage = image
-            analizeView.imageData = UIImageJPEGRepresentation(image, 0.65) //as NSData!
+            analizeView.imageData = UIImageJPEGRepresentation(image, 0.60) //as NSData!
             
             self.selectedIndex = 0
         }
