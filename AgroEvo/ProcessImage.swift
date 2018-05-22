@@ -12,7 +12,7 @@ import UIKit
 class ProcessImage {
     var id:String = ""
     var thumbnail_img:UIImage?
-    var img_url:URL?
+    var imgs_string_names:[String] = []
     var hoja_sana:Float = 0.0
     var hoja_roya_blanca:Float = 0.0
     var hoja_minador:Float = 0.0
@@ -26,10 +26,10 @@ class ProcessImage {
         
     }
     
-    init(id:String, thumbnail_img:UIImage, img_url:URL,hoja_sana:Float, hoja_roya_blanca:Float, hoja_minador:Float, hoja_quimico:Float, hoja_quemada:Float, flor_cerrada:Float, flor_abierta:Float, maleza:Float) {
+    init(id:String, thumbnail_img:UIImage, imgs_string_names:[String],hoja_sana:Float, hoja_roya_blanca:Float, hoja_minador:Float, hoja_quimico:Float, hoja_quemada:Float, flor_cerrada:Float, flor_abierta:Float, maleza:Float) {
         self.id = id
         self.thumbnail_img = thumbnail_img
-        self.img_url = img_url
+        self.imgs_string_names = imgs_string_names
         self.hoja_sana = hoja_sana
         self.hoja_roya_blanca = hoja_roya_blanca
         self.hoja_minador = hoja_minador

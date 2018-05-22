@@ -16,9 +16,17 @@
 		4870D43D2097E88500584303 /* SelectGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4870D43C2097E88500584303 /* SelectGalleryViewController.swift */; };
 		4870D4452098BD6600584303 /* MediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4870D4442098BD6600584303 /* MediaCollectionViewCell.swift */; };
 		4870D4472098CAA700584303 /* MediaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4870D4462098CAA700584303 /* MediaDetailViewController.swift */; };
+		4875468B20B215BD002B6F25 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875468A20B215BD002B6F25 /* MapViewController.swift */; };
+		4875468F20B21D18002B6F25 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 4875468E20B21D17002B6F25 /* camera.png */; };
+		4875469120B22154002B6F25 /* MapImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875469020B22154002B6F25 /* MapImageView.swift */; };
+		487F17BC20B45E9100001C8B /* gallery.png in Resources */ = {isa = PBXBuildFile; fileRef = 487F17BB20B45E9000001C8B /* gallery.png */; };
+		487F17BE20B45F0700001C8B /* camera_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 487F17BD20B45F0600001C8B /* camera_icon.png */; };
+		487F17C020B45FBD00001C8B /* map_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 487F17BF20B45FBC00001C8B /* map_icon.png */; };
 		488569272093EB100048855B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488569262093EB100048855B /* MainViewController.swift */; };
 		488569292093EB7F0048855B /* AnalizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488569282093EB7F0048855B /* AnalizeViewController.swift */; };
+		4894745520B212A600DD32FD /* MapTahami.png in Resources */ = {isa = PBXBuildFile; fileRef = 4894745420B212A500DD32FD /* MapTahami.png */; };
 		48B368CE2096376000A7B526 /* SendButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B368CD2096376000A7B526 /* SendButton.swift */; };
+		48BA68D320B31AEA0046C363 /* SendImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BA68D220B31AEA0046C363 /* SendImageViewController.swift */; };
 		7276A1AFA18CB39A288E7016 /* Pods_AgroEvo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04B8660DB1D634E975D1457 /* Pods_AgroEvo.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,9 +42,17 @@
 		4870D43C2097E88500584303 /* SelectGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGalleryViewController.swift; sourceTree = "<group>"; };
 		4870D4442098BD6600584303 /* MediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCollectionViewCell.swift; sourceTree = "<group>"; };
 		4870D4462098CAA700584303 /* MediaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailViewController.swift; sourceTree = "<group>"; };
+		4875468A20B215BD002B6F25 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		4875468E20B21D17002B6F25 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		4875469020B22154002B6F25 /* MapImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapImageView.swift; sourceTree = "<group>"; };
+		487F17BB20B45E9000001C8B /* gallery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gallery.png; sourceTree = "<group>"; };
+		487F17BD20B45F0600001C8B /* camera_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_icon.png; sourceTree = "<group>"; };
+		487F17BF20B45FBC00001C8B /* map_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_icon.png; sourceTree = "<group>"; };
 		488569262093EB100048855B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		488569282093EB7F0048855B /* AnalizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalizeViewController.swift; sourceTree = "<group>"; };
+		4894745420B212A500DD32FD /* MapTahami.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapTahami.png; sourceTree = "<group>"; };
 		48B368CD2096376000A7B526 /* SendButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendButton.swift; sourceTree = "<group>"; };
+		48BA68D220B31AEA0046C363 /* SendImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendImageViewController.swift; sourceTree = "<group>"; };
 		707FA9453FEF9287F3BE7A86 /* Pods-AgroEvo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgroEvo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AgroEvo/Pods-AgroEvo.debug.xcconfig"; sourceTree = "<group>"; };
 		DB888AB558D327039E1003B5 /* Pods-AgroEvo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgroEvo.release.xcconfig"; path = "Pods/Target Support Files/Pods-AgroEvo/Pods-AgroEvo.release.xcconfig"; sourceTree = "<group>"; };
 		E04B8660DB1D634E975D1457 /* Pods_AgroEvo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AgroEvo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,14 +93,22 @@
 			children = (
 				48141653207C5571009BF683 /* AppDelegate.swift */,
 				48141657207C5571009BF683 /* Main.storyboard */,
-				4870D4382097693500584303 /* GalleryViewController.swift */,
+				488569262093EB100048855B /* MainViewController.swift */,
+				488569282093EB7F0048855B /* AnalizeViewController.swift */,
+				48BA68D220B31AEA0046C363 /* SendImageViewController.swift */,
+				4875469020B22154002B6F25 /* MapImageView.swift */,
+				4875468A20B215BD002B6F25 /* MapViewController.swift */,
 				4870D43C2097E88500584303 /* SelectGalleryViewController.swift */,
+				4870D4382097693500584303 /* GalleryViewController.swift */,
 				4870D4442098BD6600584303 /* MediaCollectionViewCell.swift */,
+				4870D4462098CAA700584303 /* MediaDetailViewController.swift */,
 				4870D43A20976BB900584303 /* ProcessImage.swift */,
 				48B368CD2096376000A7B526 /* SendButton.swift */,
-				4870D4462098CAA700584303 /* MediaDetailViewController.swift */,
-				488569282093EB7F0048855B /* AnalizeViewController.swift */,
-				488569262093EB100048855B /* MainViewController.swift */,
+				487F17BD20B45F0600001C8B /* camera_icon.png */,
+				487F17BF20B45FBC00001C8B /* map_icon.png */,
+				4875468E20B21D17002B6F25 /* camera.png */,
+				487F17BB20B45E9000001C8B /* gallery.png */,
+				4894745420B212A500DD32FD /* MapTahami.png */,
 				4814165A207C5575009BF683 /* Assets.xcassets */,
 				4814165C207C5575009BF683 /* LaunchScreen.storyboard */,
 				4814165F207C5575009BF683 /* Info.plist */,
@@ -169,8 +193,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				487F17BC20B45E9100001C8B /* gallery.png in Resources */,
+				487F17BE20B45F0700001C8B /* camera_icon.png in Resources */,
 				4814165E207C5575009BF683 /* LaunchScreen.storyboard in Resources */,
 				4814165B207C5575009BF683 /* Assets.xcassets in Resources */,
+				4894745520B212A600DD32FD /* MapTahami.png in Resources */,
+				487F17C020B45FBD00001C8B /* map_icon.png in Resources */,
+				4875468F20B21D18002B6F25 /* camera.png in Resources */,
 				48141659207C5571009BF683 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,13 +250,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48BA68D320B31AEA0046C363 /* SendImageViewController.swift in Sources */,
 				488569272093EB100048855B /* MainViewController.swift in Sources */,
 				48B368CE2096376000A7B526 /* SendButton.swift in Sources */,
 				4870D4472098CAA700584303 /* MediaDetailViewController.swift in Sources */,
+				4875468B20B215BD002B6F25 /* MapViewController.swift in Sources */,
 				4870D4392097693500584303 /* GalleryViewController.swift in Sources */,
 				4870D43D2097E88500584303 /* SelectGalleryViewController.swift in Sources */,
 				4870D43B20976BB900584303 /* ProcessImage.swift in Sources */,
 				488569292093EB7F0048855B /* AnalizeViewController.swift in Sources */,
+				4875469120B22154002B6F25 /* MapImageView.swift in Sources */,
 				48141654207C5571009BF683 /* AppDelegate.swift in Sources */,
 				4870D4452098BD6600584303 /* MediaCollectionViewCell.swift in Sources */,
 			);
